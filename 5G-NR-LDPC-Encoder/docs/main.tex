@@ -1,0 +1,510 @@
+\documentclass[journal,twocolumn]{IEEEtran}
+\makeatletter
+\makeatother
+\usepackage{setspace}
+\usepackage{gensymb}
+\usepackage{xcolor}
+\usepackage{caption}
+%\usepackage{stackengine}
+%\usepackage{subcaption}
+%\doublespacing
+\singlespacing
+
+
+
+\usepackage{graphicx}
+\graphicspath{ {./images}  }
+%\usepackage{amssymb}
+%\usepackage{relsize}
+\usepackage[cmex10]{amsmath}
+\usepackage{mathtools}
+%\usepackage{amsthm}
+\interdisplaylinepenalty=2500
+%\savesymbol{iint}
+%\usepackage{txfonts}
+%\restoresymbol{TXF}{iint}
+\usepackage{wasysym}
+%\usepackage[table]{xcolor}% http://ctan.org/pkg/xcolor
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{colortbl}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{mathtools}
+\usepackage{subfig}
+\usepackage{enumerate}	
+\usepackage{enumitem}
+\usepackage{amsmath}
+%\usepackage{xtab}
+\usepackage{longtable}
+\usepackage{multirow}
+%\usepackage{algorithm}
+%\usepackage{algpseudocode}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+%\usepackage{iithtlc}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+
+%\usetikzlibrary{arrows.meta,calc,positioning}
+%\usepackage[framemethod=tikz]{mdframed}
+\usepackage{listings}
+    \usepackage[latin1]{inputenc}                                 %%
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+  %optionally (for landscape tables embedded in another document): %%
+    \usepackage{lscape}     
+
+
+%\usepackage{stmaryrd}
+
+
+%\usepackage{wasysym}
+%\newcounter{MYtempeqncnt}
+\DeclareMathOperator*{\Res}{Res}
+%\renewcommand{\baselinestretch}{4}
+%\setcounter{secnumdepth}{4}
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+%\renewcommand\thesubsubsubsection{\thesubsubsection.\arabic{subsubsubsection}}
+
+%\renewcommand\thesectiondis{\arabic{section}}
+%\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+%\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+%\renewcommand\thesubsubsubsectiondis{\thesubsubsectiondis.\arabic{subsubsubsection}}
+% correct bad hyphenation here
+\hyphenation{Future Wireless communications}
+
+%\lstset{
+%language=C,
+%frame=single, 
+%breaklines=true
+%}
+
+%\lstset{
+	%%basicstyle=\small\ttfamily\bfseries,
+	%%numberstyle=\small\ttfamily,
+	%language=Octave,
+	%backgroundcolor=\color{white},
+	%%frame=single,
+	%%keywordstyle=\bfseries,
+	%%breaklines=true,
+	%%showstringspaces=false,
+	%%xleftmargin=-10mm,
+	%%aboveskip=-1mm,
+	%%belowskip=0mm
+%}
+
+%\surroundwithmdframed[width=\columnwidth]{lstlisting}
+\def\inputGnumericTable{}                                 %%
+
+\lstset{
+%language=python,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+
+ 
+
+\begin{document}
+%
+\tikzstyle{block} = [rectangle, draw,
+text width=7em, text centered, minimum height=4em]
+\tikzstyle{sum} = [draw, circle, node distance=3cm]
+\tikzstyle{input} = [coordinate]
+\tikzstyle{output} = [coordinate]
+\tikzstyle{pinstyle} = [pin edge={to-,thin,black}]
+\tikzstyle{line} = [draw, -latex']
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}{Definition}[section]
+%\newtheorem{algorithm}{Algorithm}[section]
+%\newtheorem{cor}{Corollary}
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+%\newcommand{\SubItem}[1]{{\setlength\itemindent{15pt} \item[-] #1}
+\bibliographystyle{IEEEtran}
+%\bibliographystyle{ieeetr}
+\providecommand{\nCr}[2]{\,^{#1}C_{#2}} % nCr
+\providecommand{\nPr}[2]{\,^{#1}P_{#2}} % nPr
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\providecommand{\abs}[1]{\left\vert#1\right\vert}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\providecommand{\mean}[1]{E\left[ #1 \right]}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+%\numberwithin{equation}{subsection}
+\numberwithin{equation}{section}
+%\numberwithin{problem}{subsection}
+%\numberwithin{definition}{subsection}
+%\makeatletter
+%\@addtoreset{figure}{section}
+%\makeatother
+\let\StandardTheFigure\thefigure
+%\renewcommand{\thefigure}{\theproblem.\arabic{figure}}
+%\renewcommand{\thefigure}{\thesection}
+%\numberwithin{figure}{subsection}
+%\numberwithin{equation}{subsection}
+%\numberwithin{equation}{section}
+%\numberwithin{equation}{problem}
+%\numberwithin{problem}{subsection}
+%\numberwithin{problem}{section}
+%%\numberwithin{definition}{subsection}
+%\makeatletter
+%\@addtoreset{figure}{problem}
+%\makeatother
+%\makeatletter
+%\@addtoreset{table}{problem}
+%\makeatother
+\let\StandardTheFigure\thefigure
+\let\StandardTheTable\thetable
+\let\vec\mathbf
+%%\renewcommand{\thefigure}{\theproblem.\arabic{figure}}
+%\renewcommand{\thefigure}{\theproblem}
+%%\numberwithin{figure}{section}
+%%\numberwithin{figure}{subsection}
+\def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
+     \def\rightbox#1{\makebox[0in][r]{#1}}
+     \def\centbox#1{\makebox[0in]{#1}}
+     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+\title{ 
+%	\logo{
+5G NR LDPC Encoder and Decoder 
+%	}
+}
+\author{Dudekula Useni}% <-this % stops a space
+% make the title area
+\maketitle
+\tableofcontents
+\section{\textbf{Introduction}}
+5G NR (New Radio) is the latest wireless communication standard that supports higher data rates, lower latency, and increased reliability. LDPC (Low-Density Parity-Check) is a forward error correction (FEC) technique used in 5G NR to improve the reliability of data transmission.\\
+
+5G NR (New Radio) uses Low-Density Parity-Check (LDPC) codes for forward error correction (FEC) to improve the reliability of data transmission over wireless channels. LDPC codes are linear block codes that have a sparse parity-check matrix. The parity-check matrix is designed to have a low density of 1's, which means that only a small fraction of the bits in the matrix are 1's.\\
+
+The 5G NR LDPC codes are designed to have a high coding gain and low error rates while maintaining low latency and complexity. The coding gain is the ratio of the signal-to-noise ratio (SNR) required for a non-coded system to achieve a certain bit error rate (BER) compared to the SNR required for a coded system to achieve the same BER. The higher the coding gain, the more robust the code is against channel noise and interference.\\
+
+The 5G NR LDPC codes are specified by the 3GPP (Third Generation Partnership Project) and include several code rates ranging from 1/5 to 5/6. The code rates determine the amount of redundancy added to the original data to create the codeword. Higher code rates add more redundancy, which results in a more robust code but also increases the latency of the transmission.\\
+
+The 5G NR LDPC codes have a block size of 8448 bits and are designed to be flexible and adaptable to different channel conditions. The code rate and the number of iterations used in the decoding process can be adjusted based on the channel conditions to optimize the trade-off between coding gain, latency, and complexity.\\
+
+Overall, the 5G NR LDPC codes are a crucial component of the 5G NR communication system, and their performance has a significant impact on the reliability and efficiency of data transmission over wireless channels.
+\section{\textbf{5G NR LDPC Encoder}}
+The 5G NR (New Radio) encoder is responsible for encoding information bits into a larger codeword to improve the reliability of data transmission. The 5G NR standard uses a specific type of forward error correction (FEC) technique called LDPC (Low-Density Parity-Check) for error correction. The 5G NR LDPC encoder adds redundant bits to the original information bits to create the codeword.\\
+
+The 5G NR LDPC encoder uses a parity-check matrix to determine the redundant bits to add to the information bits. The matrix is designed to have a low-density of 1's, which means that only a small fraction of the bits in the matrix are 1's. This reduces the complexity of the encoder and decoder while still providing high coding gain and low error rates.\\
+
+The 5G NR LDPC encoder can operate at different code rates, which determines the amount of redundancy added to the information bits. The higher the code rate, the more redundancy is added, which results in a more robust codeword but also increases the latency of the transmission.\\
+
+The 5G NR encoder also includes other features such as rate matching and code block segmentation. Rate matching is used to adjust the size of the codeword to match the modulation and channel coding scheme used for transmission. Code block segmentation is used to divide the information bits into smaller code blocks, which can be processed and encoded separately.\\
+
+Overall, the 5G NR encoder is a critical component of the communication system, and its performance impacts the reliability and efficiency of data transmission over 5G networks.
+
+\subsection{\textbf{5G-NR LDPC Channel coding}}
+Based on my interpretation from {\href{https://www.etsi.org/deliver/etsi_ts/138200_138299/138212/17.01.00_60/ts_138212v170100p.pdf}{3GPP Specification 38.212} Rel 15 (Multiplexing and channel coding), I had put together the procedure on how LDPC Base Graph selection and coding happens.
+\begin{enumerate}
+  \item For transmission of a DL transport block , a transport block CRC is first appended to provide error detection, followed by a LDPC base graph selection.
+  \item   NR supports two LDPC base graphs, one for small transport blocks and one for larger transport blocks.
+   \item  Then transport block is segmented into code blocks and code block CRC attachment is performed.
+   \item  Each code block is individually LDPC encoded. The LDPC coded blocks are then individually rate matched.
+  \item   Finally, code block concatenation is performed to create a codeword for transmission. Up to 2 code words can be transmitted simultaneously. 
+    \end{enumerate}
+ \subsection{\textbf{LDPC Base Graphs}}   
+    There are two types of Base Graphs standardized in the specification, {\href{https://www.etsi.org/deliver/etsi_ts/138200_138299/138212/17.01.00_60/ts_138212v170100p.pdf}{3GPP Specification 38.212} (Multiplexing and channel coding).Base Graph is a Matrix where each of the entries can be further expanded based on the expansion factor Zc.
+\begin{enumerate}
+  \item  Base Graph 1 (BG1) : With Matrix size 46X68 entries For Large Transport Block. \\
+   \begin{figure}[h]
+  \includegraphics[width=\columnwidth]{../figs/bg1.png} 
+  \caption{High Level Visualization of fully Populated BG1 Matrix}
+  \end{figure}
+  \item  Base Graph 2 (BG2) : With matrix size 42X52 entries For Smaller Transport Block.\\
+  \begin{figure}[h]
+  \includegraphics[width=\columnwidth]{../figs/bg2.png} 
+  \caption{High Level Visualization of fully Populated BG2 Matrix}
+  \end{figure}
+      \end{enumerate}
+      
+       \subsection{\textbf{Base Graph Structure}}
+The following figure represents the structure of base graph.
+\vspace{15mm}
+  \begin{figure}[h]
+ \includegraphics[width=\columnwidth]{../figs/H.png}    
+     \caption{Structure of Base-Garph}
+  \end{figure}\\
+\vspace{5mm}
+  where\\
+  
+ A=
+$\begin{bmatrix}
+a_{1,1} & a_{1,2} & \ldots & a_{1,k_{b}}\\
+a_{2,1} & a_{2,2} & \ldots & a_{2,k_{b}}\\
+a_{3,1} & a_{3,2} & \ldots & a_{3,k_{b}}\\
+a_{4,1} & a_{4,2} & \ldots & a_{4,k_{b}}
+\end{bmatrix}$\\
+\vspace{5mm}
+
+C$_{1}$=
+$\begin{bmatrix}
+c_{1,1} & c_{1,2} & \ldots & c_{1,k_{b}}\\
+c_{2,1} & c_{2,2} & \ldots & c_{2,k_{b}}\\
+c_{3,1} & c_{3,2} & \ldots & c_{3,k_{b}}\\
+ \vdots & \vdots & \ddots & \vdots\\
+c_{m_{b}-4,1} & c_{m_{b}-4,2} & \ldots & c_{m_{b}-4,k_{b}}\\ 
+\end{bmatrix}$\\
+\vspace{5mm}
+
+C$_{2}$=
+$\begin{bmatrix}
+c_{1,k_{b}+1} & c_{1,k_{b}+2} &c_{1,k_{b}+3} & c_{1,k_{b}+4}\\
+c_{2,k_{b}+1} & c_{2,k_{b}+2} &c_{2,k_{b}+3} & c_{2,k_{b}+4}\\
+c_{3,k_{b}+1} & c_{3,k_{b}+2} &c_{3,k_{b}+3} & c_{3,k_{b}+4}\\
+ \vdots & \vdots & \vdots& \vdots\\
+c_{m_{b}-4,k_{b}+1} & c_{m_{b}-4,k_{b}+2} & c_{m_{b}-4,k_{b}+3} & c_{m_{b}-4,k_{b}+4}\\ 
+\end{bmatrix}$
+\vspace{5mm}\\ 
+There are two types of B i.e.,
+
+$B \in \{H_{BG1\_B1}, H_{BG1\_B2}, H_{BG2\_B1}, H_{BG2\_B2}\}$ in both BG1 and BG2. \\ 
+
+ H$_{BG1\_B1}$=
+$\begin{bmatrix}
+1 & 0 & -1 & -1\\
+0 & 0 & 0 & -1\\
+-1 & -1 & 0 & 0\\
+1 & -1 & -1 & 0
+\end{bmatrix}$\\
+\vspace{5mm}
+
+ H$_{BG1\_B2}$=
+$\begin{bmatrix}
+0 & 0 & -1 & -1\\
+105 & 0 & 0 & -1\\
+-1 & -1 & 0 & 0\\
+0 & -1 & -1 & 0
+\end{bmatrix}$\\
+\vspace{5mm}\\
+ H$_{BG1\_B1}$ is for Zc set index iLS=(0,1,2,3,4,5,7), H$_{BG1_B2}$ is for iLS=(6).\\
+\vspace{5mm}\\
+ H$_{BG2\_B1}$=
+$\begin{bmatrix}
+0 & 0 & -1 & -1\\
+-1 & 0 & 0 & -1\\
+1 & -1 & 0 & 0\\
+0 & -1 & -1 & 0
+\end{bmatrix}$\\
+\vspace{5mm}
+
+ H$_{BG2\_B2}$=
+$\begin{bmatrix}
+1 & 0 & -1 & -1\\
+-1 & 0 & 0 & -1\\
+0 & -1 & 0 & 0\\
+1 & -1 & -1 & 0
+\end{bmatrix}$\\
+\vspace{5mm}\\ 
+  H$_{BG2\_B1}$ is for Zc set index iLS=(0,1,2,4,5,6), H$_{BG2_B2}$ is for iLS=(3,7).\\ 
+  \vspace{5mm}\\
+  
+
+      
+ \subsection{\textbf{LDPC Base Graph selection procedure}}   
+   I have put together the following example of constructing the LDCP parity check matrix for a given information block size K and code rate R = K/N.\\
+For simplicity I have considered a small TBS of size 20bits to illustrate below example, K=20 and R=0.25   
+\begin{enumerate}
+  \item Obtain the base graph BG1 or BG2 for the given K (Transport Block )and R (Code Rate),Refer {\href{https://www.etsi.org/deliver/etsi_ts/138200_138299/138212/17.01.00_60/ts_138212v170100p.pdf}{3GPP Specification 38.212}} for LDPC base graph selection. \\
+As per the specification\\
+\begin{enumerate}
+ \item if K$<=$3824 and R$<=$0.67 then BG2 is selected.\\
+ \item    If K$<=$ 292 then BG2 is selected\\
+ \item    if R$<=$0.25 then BG2 is selected.\\
+ \item    Else BG1 is selected\\
+ \end{enumerate}
+   \begin{figure}[h]
+ \includegraphics[width=\columnwidth]{../figs/bgs-sel.png} 
+  \caption{Graphical Representation of Base Graph Selection}
+  \end{figure}
+    \item  Determine the value of Kb for the given K (Transport Block) and R (Code Rate) Ref {\href{https://www.etsi.org/deliver/etsi_ts/138200_138299/138212/17.01.00_60/ts_138212v170100p.pdf}{3GPP Specification 38.212, 5.2.2}}\\
+    Kb denotes the number of information bit columns for the lifting size Zc.\\
+
+As per the Specification\\
+
+For LDPC BG1:\\
+\begin{enumerate}
+  \item        Kb = 22 \\
+  \end{enumerate}
+For LDPC BG2:\\
+\begin{enumerate}
+ \item     if K is between 640 $<$ K $<=$ 3824 then Kb = 10\\
+  \item    if K is between 560 $<$ K $<=$ 640 then Kb = 9\\
+  \item    if K is between 192 $<$ K $<=$ 560 then Kb =8\\
+  \item    If K is $<=$ 192 then Kb is = 6\\
+    \end{enumerate}
+    
+ \item  Determine the base matrix expansion factor Zc by selecting the minimum Zc value in below Table,such that Kb*Zc $>=$K.Sets of LDPC lifting size Zc in the specification I have populated below Zc table.\\
+\begin{centering}
+a\\
+\end{centering}
+\begin{centering}
+j
+\end{centering}
+     \begin{tabular} {|>{\columncolor{red!35}} p {0.3 cm} | p {0.4 cm} | p {0.4 cm} | p {0.4 cm} | p {0.4 cm} | p {0.4 cm} | p {0.4 cm} | p {0.4 cm} | p {0.4 cm} |  }
+         \hline
+        \rowcolor{orange!80}    \cellcolor{blue!30}Zc & 2 &3 &5 &7 &9 &11 &13 &15\\
+    \hline
+     0 &\cellcolor{blue!30} 2 &\cellcolor{blue!30}3 &\cellcolor{blue!30}5 &\cellcolor{blue!30}7 &\cellcolor{blue!30}9 &\cellcolor{blue!30}11 &\cellcolor{blue!30}13 &\cellcolor{blue!30}15 \\
+    \hline
+   1 &\cellcolor{blue!30} 4 &\cellcolor{blue!30}6 &\cellcolor{blue!30}10 &\cellcolor{blue!30}14 &\cellcolor{blue!30}18 &\cellcolor{blue!30}22 &\cellcolor{blue!30}26 &\cellcolor{blue!30}30\\
+   \hline
+    2 & \cellcolor{blue!30}8 &\cellcolor{blue!30}12 &\cellcolor{blue!30}20 &\cellcolor{blue!30}28 &\cellcolor{blue!30}36 &\cellcolor{blue!30}44 &\cellcolor{blue!30}52 &\cellcolor{blue!30}60 \\
+    \hline
+   3 & \cellcolor{blue!30}16 &\cellcolor{blue!30}24 &\cellcolor{blue!30}40 &\cellcolor{blue!30}56 &\cellcolor{blue!30}72 &\cellcolor{blue!30}88 &\cellcolor{blue!30}104 &\cellcolor{blue!30}120 \\
+    \hline
+     4 & \cellcolor{blue!30}32 &\cellcolor{blue!30}48 &\cellcolor{blue!30}80 &\cellcolor{blue!30}112 &\cellcolor{blue!30}144 &\cellcolor{blue!30}196 &\cellcolor{blue!30}208 &\cellcolor{blue!30}240\\
+    \hline
+     5 &\cellcolor{blue!30} 64 &\cellcolor{blue!30}96 &\cellcolor{blue!30}160 &\cellcolor{blue!30}224 &\cellcolor{blue!30}288 &\cellcolor{blue!30} & \cellcolor{blue!30}&\cellcolor{blue!30}\\
+    \hline
+     6 &\cellcolor{blue!30} 128 &\cellcolor{blue!30}192 &\cellcolor{blue!30}320 &\cellcolor{blue!30} &\cellcolor{blue!30} &\cellcolor{blue!30} &\cellcolor{blue!30} &\cellcolor{blue!30}\\
+    \hline
+     7 &\cellcolor{blue!30} 256 &\cellcolor{blue!30}384 &\cellcolor{blue!30} &\cellcolor{blue!30} &\cellcolor{blue!30} &\cellcolor{blue!30} & \cellcolor{blue!30}&\cellcolor{blue!30}\\
+    \hline
+    \end{tabular}\\
+    Zc=a*2\textsuperscript{j}\\
+  
+          
+          
+       For K=20 , Zc = 4, this satisfies the condition Kb*Zc $>$= K , 6*4 = 24 , 24$>$ 20 and this is the minimum Zc value from the above table that satisfies this condition.\\
+    \item       After Zc is determined, the corresponding shift coefficient matrix set need to be selected from below Table., Ref for this table is    {\href{https://www.etsi.org/deliver/etsi_ts/138200_138299/138212/17.01.00_60/ts_138212v170100p.pdf}{3GPP Specification 38.212,5.3.2 }}\\
+     \vspace{4mm}
+     
+       \begin{tabular} {| p {2.1 cm} | p {4 cm} |}
+       \hline
+  
+  \cellcolor{violet!40} Set Index(iLS)& \cellcolor{violet!40}Set of Lifting Sizes(Zc)\\
+  \hline
+  
+  0&2,4,8,16,32,64,128,256\\
+  \hline
+    1&3,6,12,24,48,96,192,384\\
+  \hline
+     2&5,10,20,40,80,160,320\\
+  \hline
+     3&7,14,28,56,112,224\\
+  \hline
+    4&9,18,36,72,144,288\\
+  \hline
+    5&11,22,44,88,196\\
+  \hline
+    6&13,26,52,104,208\\
+  \hline
+   7&15,30,60,120,240\\
+  \hline
+    \end{tabular}\\  
+    
+    Since Zc = 4, Set Index (iLS) "0" is considered.\\
+    
+   \item      Determine the entries values in the base matrix based on the Zc,  Calculate the shifting coefficient value P(i,j) by the modular Zc operation. 
+   
+   \begin{lstlisting}
+    P(i,j)= f(Vi,j , Zc)= mod(Vi,j, Zc)
+    \end{lstlisting}
+    Referral tables to calculate P(i,j) are available in the specification {\href{https://www.etsi.org/deliver/etsi_ts/138200_138299/138212/17.01.00_60/ts_138212v170100p.pdf}{3GPP Specification 38.212,5.3.2 }}\\
+  \begin{figure}[h]
+ \includegraphics[width=\columnwidth]{../figs/hbgtab1.png}    
+     \caption{LDPC base graph 1 (BG 1) and its parity check matrices}
+  \end{figure}\\
+  \vspace{5mm}
+    \begin{figure}[h]
+ \includegraphics[width=\columnwidth]{../figs/hbgtab2.png}    
+     \caption{LDPC base graph 2 (BG 2) and its parity check matrices}
+  \end{figure}\\
+For K=20 , Base Graph = 2, Zc= 4 and SetIndex  iLS = 0, from above Table LDPC base graph 2 Using the equation P(i,j) = f(Vi,j , z) = mod(Vi,j , z) all the possible base graph matrix entries with the shifting coefficient are determined.   \\
+Below I have illustrated how the Base Matrix entries P(i.j) are populated, I have considered only the first row for below illustration, like wise the full matrix is built.\\
+ \begin{figure}[h]
+ \includegraphics[width=\columnwidth]{../figs/selbgs.png}    
+     \caption{LDPC parity check matrix selection}
+  \end{figure}\\
+  From Step 3 and 4 Set Index iLS = 0 and Zc =4\\
+   \begin{figure}[h]
+ \includegraphics[width=\columnwidth]{../figs/mod.png}    
+     \caption{modulus operation}
+  \end{figure}\\
+  
+  Using the above principal remaining all entries of the matrix can be populated based on the Row index i and Column Index j and SetIndex(iLS)\\
+  I populated the below full base graph2 matrix with Zc=4\\
+  \vspace{5mm}
+     \begin{figure}[h]
+ \includegraphics[width=\columnwidth]{../figs/pcm.png}    
+     \caption{Base Graph2 for iLS=0 and Zc=4}
+  \end{figure}\\
+  
+  The above mentioned steps are used in the following program to generate base graphs based on K and N.\\
+   \begin{center}
+     \fbox {\href{https://github.com/KrishnaYadati/IIT-H-FWC-Project/blob/main/5G-NR-LDPC-Encoder/codes/ldpcbasegraphgen.c}{ldpcbasegraphgen.c}}
+       \end{center}
+      \vspace{2mm}  
+I have generated all the posible base graphs and are available in {\href{https://github.com/KrishnaYadati/IIT-H-FWC-Project/tree/main/5G-NR-LDPC-Encoder/Base_Graphs}{BaseGraphs}} section .\\
+ 
+ \subsection{\textbf{Encoding Algorithm}} 
+   Let the codeword be\\
+ 
+C=[s$_{1}$,s$_{2}$,....s$_{k_b}$,p$_{b_1}$,p$_{b_2}$,p$_{b_3}$,p$_{b_4}$,p$_{c_1}$,p$_{c_2}$,.....,p$_{c_{m_{b}-4}}$]\\
+
+where each element of C is a vector of length Zc. \\
+The encoding of LDPC codes is carried out as follows:\\
+
+ 
+  \begin{enumerate} 
+ \item First step is to generate any random message of size equal to lifting size (Zc) which has obtained during the selection of base graph.Then Zc should be multiplied with the original information bits i.e., difference between rows and columns for the selected base graph.\\
+  \begin{lstlisting}
+  Zc * (Column Size-Row Size)
+ \end{lstlisting}
+ \vspace{5mm}
+   \item After that generate the codeword.Which should be of size given below \\
+  \begin{lstlisting}
+  Zc * Column Size
+ \end{lstlisting}
+ 
+  \end{enumerate} 
+
+            \end{enumerate} 
+      
+         
+\end{document}
